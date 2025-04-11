@@ -1,10 +1,15 @@
-<script setup>
-</script>
-
 <template>
-  <main>
-  </main>
+  <div class="home">
+    <h1>This is home page </h1>
+  </div>
 </template>
 
-<style scoped>
+<style>
+@media (min-width: 1024px) {
+  .home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+}
 </style>
