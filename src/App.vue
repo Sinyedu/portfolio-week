@@ -8,7 +8,8 @@ import { RouterLink, RouterView } from 'vue-router'
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/simon">Simon</RouterLink>
+        <RouterLink to="/benjamin">Benjamin</RouterLink>
       </nav>
   </header>
 
