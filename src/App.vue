@@ -4,8 +4,6 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/simon">Simon</RouterLink>
@@ -20,6 +18,7 @@ import { RouterLink, RouterView } from 'vue-router'
 header {
   line-height: 1.5;
   max-height: 100vh;
+  max-width: 100vw;
 }
 
 .logo {
@@ -52,7 +51,8 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+/* Example of an unnecessary media query */
+/* @media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
@@ -77,5 +77,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
