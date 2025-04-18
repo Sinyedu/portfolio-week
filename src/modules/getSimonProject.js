@@ -1,9 +1,14 @@
+import trapholtImg from '@/assets/trapholt.png';
+import fantasyfestivalImg from '@/assets/fantasyfestival.png';
+import dicegameImg from '@/assets/dicegame.png';
+import projectmanagementImg from '@/assets/projectmanagement.png';
+
 const projects = [
     {
         id: 1,
         title: "Trapholt",
         description: "This is our first semester project at Trapholt.",
-        image: "path/to/image1.jpg",
+        image: trapholtImg,
         techstack: "HTML, CSS and Bootstrap",
         link: "https://github.com/Sinyedu/Trapholt-Eksamen",
     },
@@ -11,7 +16,7 @@ const projects = [
         id: 2,
         title: "Fantasy Festival",
         description: "This is our second semester project at Fantasy Festival.",
-        image: "path/to/image2.jpg",
+        image: fantasyfestivalImg,
         techstack: "Vue, JavaScript, Tailwind, Firebase, HTML, CSS",
         link: "https://github.com/Sinyedu/Fantasy-Festival",
     },
@@ -19,7 +24,7 @@ const projects = [
         id: 3,
         title: "Dice Game",
         description: "A minor game, that I made in my spare time. It is a simple dice game where you can play against the computer.",
-        image: "path/to/image4.jpg",
+        image: dicegameImg,
         techstack: "JavaScript, HTML, CSS",
         link: "https://github.com/Sinyedu/Dice-Game"
     },
@@ -27,7 +32,7 @@ const projects = [
         id: 4,
         title: "Project Management System",
         description: "Benjamin and I's project management system. That we made in our ADV JS elective",
-        image: "path/to/image3.jpg",
+        image: projectmanagementImg,
         techstack: "Vue, JavaScript, Tailwind, Firebase, HTML, CSS",
         link: "https://github.com/NimNim20/Project-Management-System"
     },
@@ -49,4 +54,6 @@ const projects = [
     }
 ];
 
-export default projects;
+export default function getSimonProjects() {
+    return projects;
+}
