@@ -1,18 +1,19 @@
-<script setup lang="js">
-import ProjectSectionView from '@/components/simon/ProjectSectionView.vue';
-import HeroSectionView from '@/components/simon/HeroSectionView.vue';
-
-</script>
-
-<template lang="html">
-  <div class="simon">
-    <h1>This is Simons page </h1>
-    <HeroSectionView />
-    <ProjectSectionView />
+<template>
+  <div
+    class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800"
+  >
+    <HeroSection />
+    <AboutSection />
+    <ProjectsSection />
+    <FooterViewSection />
   </div>
-
 </template>
 
-<style lang="scss" scoped>
+<script setup>
+import HeroSection from "@/components/simon/HeroSectionView.vue";
+import AboutSection from "@/components/simon/AboutMeSectionView.vue";
+import ProjectsSection from "@/components/simon/ProjectSectionView.vue";
+import FooterViewSection from "@/components/simon/FooterViewSection.vue";
+</script>
 
-</style>
+<style scoped></style>

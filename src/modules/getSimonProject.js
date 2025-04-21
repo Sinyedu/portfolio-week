@@ -19,6 +19,7 @@ const projects = [
         image: fantasyfestivalImg,
         techstack: "Vue, JavaScript, Tailwind, Firebase, HTML, CSS",
         link: "https://github.com/Sinyedu/Fantasy-Festival",
+        website: "https://fantasyfesitval.web.app/"
     },
     {
         id: 3,
@@ -34,7 +35,8 @@ const projects = [
         description: "Benjamin and I's project management system. That we made in our ADV JS elective",
         image: projectmanagementImg,
         techstack: "Vue, JavaScript, Tailwind, Firebase, HTML, CSS",
-        link: "https://github.com/NimNim20/Project-Management-System"
+        link: "https://github.com/NimNim20/Project-Management-System",
+        website: "https://projektmanagement-b5376.web.app/"
     },
     {
         id: 5,
