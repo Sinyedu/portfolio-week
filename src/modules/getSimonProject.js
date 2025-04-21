@@ -2,7 +2,7 @@ import trapholtImg from '@/assets/trapholt.png';
 import fantasyfestivalImg from '@/assets/fantasyfestival.png';
 import dicegameImg from '@/assets/dicegame.png';
 import projectmanagementImg from '@/assets/projectmanagement.png';
-
+// My dynmaic projects
 const projects = [
     {
         id: 1,
