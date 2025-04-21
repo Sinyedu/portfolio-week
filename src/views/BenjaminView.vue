@@ -1,16 +1,15 @@
-<template>
-    <div class="benjamin">
-      <h1>This is Benjamins Page </h1>
-    </div>
-  </template>
-  
-  <style>
-  @media (min-width: 1024px) {
-    .benjamin {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
-  }
-  </style>
-  
+<script setup lang="js">
+import BenjaProjectSection from '@/components/benjamin/BenjaProjectSection.vue';
+import BenjaHeroSection from '@/components/benjamin/BenjaHeroSection.vue';
+
+</script>
+
+<template lang="html">
+  <div class="benjamin">
+    <BenjaHeroSection />
+    <BenjaProjectSection />
+  </div>
+
+</template>
+
+<style lang="scss" scoped></style>

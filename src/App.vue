@@ -1,26 +1,26 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
-function toggleTheme() {
-  const isDarkMode = event.target.checked
-  document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light')
-}
+// function toggleTheme() {
+//   const isDarkMode = event.target.checked
+//   document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light')
+// }
 </script>
 
 <template>
   <header>
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/simon">Simon</RouterLink>
-        <RouterLink to="/benjamin">Benjamin</RouterLink>
-      </nav>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/simon">Simon</RouterLink>
+      <RouterLink to="/benjamin">Benjamin</RouterLink>
+    </nav>
 
-      <div class="themeToggle">
+    <!-- <div class="themeToggle">
         <label class="switch">
           <input type="checkbox" @change="toggleTheme" />
           <span class="slider"></span>
         </label>
-      </div>
+      </div> -->
   </header>
 
   <RouterView />
@@ -67,7 +67,7 @@ nav a:first-of-type {
   border: 0;
 }
 
-.themeToggle {
+/* .themeToggle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,7 +117,7 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(26px);
-}
+} */
 
 /* Example of an unnecessary media query */
 /* @media (min-width: 1024px) {
