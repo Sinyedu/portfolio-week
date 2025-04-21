@@ -1,15 +1,19 @@
 <template>
-  <div class="simon">
-    <h1>This is Simons page </h1>
+  <div
+    class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800"
+  >
+    <HeroSection />
+    <AboutSection />
+    <ProjectsSection />
+    <FooterViewSection />
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .simon {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script setup>
+import HeroSection from "@/components/simon/HeroSectionView.vue";
+import AboutSection from "@/components/simon/AboutMeSectionView.vue";
+import ProjectsSection from "@/components/simon/ProjectSectionView.vue";
+import FooterViewSection from "@/components/simon/FooterViewSection.vue";
+</script>
+
+<style scoped></style>
