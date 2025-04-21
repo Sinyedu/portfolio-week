@@ -76,7 +76,7 @@
       Connect With Me
     </h3>
 
-    <div class="flex gap-4 mb-12">
+    <div class="flex gap-12 mb-12">
       <a href="https://github.com/Sinyedu" class="social-icon-link" target="_blank">
         <svg
           xmlns="http://www.w3.org/2000/svg"
