@@ -41,13 +41,13 @@
       <div class="flex flex-wrap justify-center gap-4 animate-slideFromBottom animation-delay-600">
         <a
           href="#projects"
-          class="px-8 py-3 bg-gradient-to-r from-teal-900 to-teal-200 hover:from-teal-900 hover:to-teal-100 text-white rounded-full font-medium shadow-lg shadow-teal-500/20 hover:shadow-teal-500/40 transition-all duration-300 transform hover:-translate-y-1"
+          class="px-8 py-3 bg-gradient-to-r from-slate-900 to-slate-500 hover:from-slate-900 hover:to-slate-100 text-white rounded-full font-medium shadow-lg shadow-teal-500/20 hover:shadow-teal-500/40 transition-all duration-300 transform hover:-translate-y-1"
         >
           View My Work
         </a>
         <a
           href="#about"
-          class="px-8 py-3 bg-white dark:bg-slate-800 text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+          class="px-8 py-3 bg-gradient-to-r from-slate-900 to-slate-500 hover:from-slate-900 hover:to-slate-100 text-white rounded-full font-medium shadow-lg shadow-teal-500/20 hover:shadow-teal-500/40 transition-all duration-300 transform hover:-translate-y-1"
         >
           About Me
         </a>
@@ -56,7 +56,29 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.classList.add("animate-slideFromBottom");
+        } else {
+          el.classList.remove("animate-slideFromBottom");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll(".animate-slideFromBottom").forEach((el) => {
+    observer.observe(el);
+  });
+});
+</script>
 
 <style scoped>
 @keyframes slideFromBottom {

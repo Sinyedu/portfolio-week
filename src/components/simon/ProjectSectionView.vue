@@ -5,7 +5,7 @@
         <h2 class="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white pb-12 relative">
           My Projects
           <span
-            class="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 to-indigo-500"
+            class="absolute bottom-8 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 to-indigo-500"
           ></span>
         </h2>
       </div>
@@ -107,6 +107,8 @@ onMounted(() => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
         }
       });
     },
@@ -119,4 +121,15 @@ onMounted(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.project-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.project-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>

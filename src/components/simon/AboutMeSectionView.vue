@@ -10,7 +10,7 @@
     </div>
 
     <div class="container mx-auto px-6">
-      <div class="flex flex-col items-start mb-16">
+      <div class="flex flex-col items-start mb-16 fade-in">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-12 relative">
           About Me
           <span
@@ -19,11 +19,13 @@
         </h2>
       </div>
 
-      <div class="flex flex-col gap-12 items-center pt-5 lg:flex-row lg:gap-0 lg:items-start">
+      <div
+        class="flex flex-col gap-12 items-center pt-5 lg:flex-row lg:gap-0 lg:items-start fade-in"
+      >
         <div class="lg:col-span-3 order-1 lg:order-2">
           <div class="prose prose-slate dark:prose-invert max-w-none">
             <ul class="text-lg leading-relaxed mb-6 text-white space-y-4">
-              <!--  // Made it a List because it looks better and is easier to read -->
+              <!-- Making a list here because it is easier to read and understand than a long text. -->
               <li>
                 🔹 Full Stack Developer with a passion for creating beautiful web experiences.
               </li>
@@ -53,7 +55,7 @@
     </div>
 
     <div class="container mx-auto px-6">
-      <div class="w-full flex flex-col pt-5 items-center md:items-start">
+      <div class="w-full flex flex-col pt-5 items-center md:items-start fade-in">
         <h3
           class="w-full text-4xl font-semibold mb-6 text-white dark:text-slate-200 pb-5 text-center md:text-left"
         >
@@ -65,18 +67,19 @@
         <div
           v-for="(tech, index) in techStack"
           :key="index"
-          class="w-[calc(100%/2.5-1rem)] sm:w-[calc(100%/3.2-1rem)] md:w-[calc(100%/4-1rem)] lg:w-[calc(100%/6-1rem)] bg-teal-500 text-black px-4 py-2 rounded-full text-sm font-medium shadow-md transition-all duration-300 hover:bg-teal-600 hover:shadow-xl text-center"
+          class="fade-in w-[calc(100%/2.5-1rem)] sm:w-[calc(100%/3.2-1rem)] md:w-[calc(100%/4-1rem)] lg:w-[calc(100%/6-1rem)] bg-teal-500 text-black px-4 py-2 rounded-full text-sm font-medium shadow-md transition-all duration-300 hover:bg-teal-600 hover:shadow-xl text-center"
+          :style="{ transitionDelay: `${index * 0.05}s` }"
         >
           {{ tech }}
         </div>
       </div>
     </div>
 
-    <h3 class="text-4xl font-semibold mb-6 text-slate-700 dark:text-slate-200 pt-20">
+    <h3 class="text-4xl font-semibold mb-6 text-slate-700 dark:text-slate-200 pt-20 fade-in">
       Connect With Me
     </h3>
 
-    <div class="flex gap-12 mb-12">
+    <div class="flex gap-12 mb-12 fade-in">
       <a href="https://github.com/Sinyedu" class="social-icon-link" target="_blank">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -118,8 +121,9 @@
 </template>
 
 <script setup>
-// Making my tech stack dynamic
-// This is a simple array of strings representing the tech stack
+import { onMounted } from "vue";
+// Made my Techstack dynamic to make it easier to add and remove items in the future
+// and to make it easier to change the order of the items in the stack.
 const techStack = [
   "Vue",
   "React",
@@ -140,6 +144,34 @@ const techStack = [
   "Vercel",
   "C#",
 ];
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+});
 </script>
 
-<style scoped></style>
+<style scoped>
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
