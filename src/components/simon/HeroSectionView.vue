@@ -75,59 +75,61 @@ onMounted(() => {
     opacity: 1;
     transform: translateY(0);
   }
+}
 
-  <style lang="scss" scoped>.hero-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 
-    .content {
-      text-align: center;
-      opacity: 0;
-      animation: fadeIn 2s ease-in forwards;
-    }
-
-    .profile-image {
-      width: 450px;
-      height: 450px;
-      border-radius: 100%;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .message {
-      font-size: 2rem;
-      color: #333;
-      font-weight: bold;
-    }
+  .content {
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .profile-image {
+    width: 450px;
+    height: 450px;
+    border-radius: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  .animate-slideFromBottom {
-    animation: slideFromBottom 0.8s ease forwards;
+  .message {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
 
-  .animation-delay-200 {
-    animation-delay: 0.2s;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .animation-delay-400 {
-    animation-delay: 0.4s;
-  }
+.animate-slideFromBottom {
+  animation: slideFromBottom 0.8s ease forwards;
+}
 
-  .animation-delay-600 {
-    animation-delay: 0.6s;
-  }</style>
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+</style>
