@@ -16,7 +16,15 @@
   </div>
 </template>
 
-<script setup></script>
+<script>
+export default {
+  methods: {
+    goToProjects() {
+      alert("Imagine this takes you to the portfolio page...");
+    },
+  },
+};
+</script>
 
 <style scoped>
 .home {
