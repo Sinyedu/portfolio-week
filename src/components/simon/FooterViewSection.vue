@@ -6,7 +6,7 @@
       <div class="text-center md:text-left">
         <h3 class="text-2xl font-bold text-slate-800 dark:text-white">Simon Erik Nyblom</h3>
         <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">
-          Frontend Developer & Web Enthusiast
+          Fullstack Developer & Web Enthusiast
         </p>
       </div>
 
