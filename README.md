@@ -1,36 +1,49 @@
 # portfolio-week
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to the Portfolio Week project! This template is designed to help you get started with Vue 3 in Vite.
 
-## Recommended IDE Setup
+## Message to Second Semester Students
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Dear second semester students,  
+This project is a great opportunity to enhance your skills in modern web development. Follow the steps below to clone, install, and run the project. Don't hesitate to experiment and learn as you go. Good luck!
 
-## Customize configuration
+## How to Clone and Run the Project
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Step 1: Clone the Repository
 
-## Project Setup
+```sh
+git clone https://github.com/your-username/portfolio-week.git
+cd portfolio-week
+```
+
+### Step 2: Install Dependencies
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Step 3: Run the Development Server
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Step 4: Build for Production
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Step 5: Deploy (If connected)
 
 ```sh
-npm run lint
+firebase deploy
 ```
-# portfolio-week
+
+## Recommended IDE Setup
+
+We recommend using [VSCode](https://code.visualstudio.com/)
+
+## Customize Configuration
+
+For more details, see the [Vite Configuration Reference](https://vite.dev/config/).
