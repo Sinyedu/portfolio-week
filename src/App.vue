@@ -1,26 +1,26 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from "vue-router";
 
-// function toggleTheme() {
-//   const isDarkMode = event.target.checked
-//   document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light')
-// }
+function toggleTheme() {
+  const isDarkMode = event.target.checked;
+  document.documentElement.setAttribute("data-theme", isDarkMode ? "dark" : "light");
+}
 </script>
 
 <template>
   <header>
-    <nav>
+    <nav class="text-white">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/simon">Simon</RouterLink>
       <RouterLink to="/benjamin">Benjamin</RouterLink>
     </nav>
 
-    <!-- <div class="themeToggle">
-        <label class="switch">
-          <input type="checkbox" @change="toggleTheme" />
-          <span class="slider"></span>
-        </label>
-      </div> -->
+    <div class="themeToggle">
+      <label class="switch">
+        <input type="checkbox" @change="toggleTheme" />
+        <span class="slider"></span>
+      </label>
+    </div>
   </header>
 
   <RouterView />
@@ -31,6 +31,7 @@ header {
   line-height: 1.5;
   max-height: 100vh;
   max-width: 100vw;
+  background-color: #1d293d;
 }
 
 .logo {
@@ -95,7 +96,7 @@ nav a:first-of-type {
   right: 0;
   bottom: 0;
   background-color: var(--color-border);
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 34px;
 }
 
@@ -107,7 +108,7 @@ nav a:first-of-type {
   left: 4px;
   bottom: 4px;
   background-color: var(--color-text);
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 50%;
 }
 
