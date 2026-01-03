@@ -103,12 +103,13 @@ const projects = ref(getSimonProjects());
 // This function will add the "show" class to the project cards when they come into view
 onMounted(() => {
   const observer = new IntersectionObserver(
-    (entries) => {
+    (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show");
+
+          // Stop observing so it never re-triggers
+          observer.unobserve(entry.target);
         }
       });
     },

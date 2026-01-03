@@ -1,135 +1,91 @@
 <template>
-  <section id="hero" class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-    <div class="absolute inset-0 -z-10 overflow-hidden">
-      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-teal-300/20 dark:bg-teal-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-indigo-300/20 dark:bg-indigo-500/10 rounded-full blur-3xl">
-      </div>
-    </div>
-
-    <div class="container mx-auto px-6 py-12 flex flex-col items-center justify-center text-center">
-      <div class="relative mb-8 group">
-        <div
-          class="absolute -inset-0.5 bg-gradient-to-r from-teal-500 to-indigo-500 rounded-full opacity-75 blur-sm group-hover:opacity-100 transition duration-500">
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+        <div class="flex justify-center lg:justify-end">
+          <div class="relative w-56 h-56 md:w-64 md:h-64">
+            <div
+              class="absolute inset-0 rounded-full bg-gradient-to-r from-teal-500 to-indigo-500 blur-md"
+            ></div>
+            <img
+              src="@/assets/simonimg.jpg"
+              alt="Simon Nyblom"
+              class="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800"
+            />
+          </div>
         </div>
-        <img src="@/assets/simonimg.jpg" alt="Profile Image"
-          class="relative w-48 h-48 md:w-64 md:h-64 object-cover rounded-full border-4 border-white dark:border-slate-800" />
-      </div>
 
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 text-slate-800 dark:text-white">
-        <span class="inline-block animate-slideFromBottom pr-[10px]">Hi, I'm </span>
-        <span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-indigo-500 inline-block animate-slideFromBottom animation-delay-200">Simon</span>
-      </h1>
+        <div
+          ref="hero"
+          class="max-w-3xl opacity-0 translate-y-6 transition-all duration-700 ease-out"
+        >
+          <h1 class="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white">
+            Simon Nyblom
+          </h1>
 
-      <p
-        class="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl animate-slideFromBottom animation-delay-400">
-        Full Stack Developer passionate about creating beautiful, functional web experiences
-      </p>
+          <p class="mt-3 text-xl text-slate-600 dark:text-slate-300">Full-stack developer</p>
 
-      <div class="flex flex-wrap justify-center gap-4 animate-slideFromBottom animation-delay-600">
-        <a href="#projects"
-          class="px-8 py-3 bg-gradient-to-r from-slate-900 to-slate-500 hover:from-slate-900 hover:to-slate-100 text-white rounded-full font-medium shadow-lg shadow-teal-500/20 hover:shadow-teal-500/40 transition-all duration-300 transform hover:-translate-y-1">
-          View My Work
-        </a>
-        <a href="#about"
-          class="px-8 py-3 bg-gradient-to-r from-slate-900 to-slate-500 hover:from-slate-900 hover:to-slate-100 text-white rounded-full font-medium shadow-lg shadow-teal-500/20 hover:shadow-teal-500/40 transition-all duration-300 transform hover:-translate-y-1">
-          About Me
-        </a>
+          <div class="mt-6 h-px w-24 bg-gradient-to-r from-teal-500 to-indigo-500"></div>
+
+          <ul class="mt-6 space-y-3 text-slate-700 dark:text-slate-300">
+            <li class="flex items-start gap-3">
+              <span class="mt-2 w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+              Based in Denmark · 23 years old
+            </li>
+
+            <li class="flex items-start gap-3">
+              <span class="mt-2 w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+              Focus on clean architecture, UX, and performance
+            </li>
+
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+              Enjoys simplifying systems and removing unnecessary complexity
+            </li>
+
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+              Slightly obsessed with tiny performance improvements
+            </li>
+          </ul>
+
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              class="px-6 py-3 rounded-full font-medium text-white bg-gradient-to-r from-teal-600 to-indigo-600 hover:opacity-90 transition"
+            >
+              View projects
+            </a>
+
+            <a
+              href="#about"
+              class="px-6 py-3 rounded-full font-medium text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+            >
+              About me
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { ref, onMounted } from "vue";
+
+const hero = ref(null);
 
 onMounted(() => {
   const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const el = entry.target;
-        if (entry.isIntersecting) {
-          el.classList.add("animate-slideFromBottom");
-        } else {
-          el.classList.remove("animate-slideFromBottom");
-        }
-      });
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-y-6");
+        observer.disconnect();
+      }
     },
-    { threshold: 0.1 }
+    { threshold: 0.3 }
   );
 
-  document.querySelectorAll(".animate-slideFromBottom").forEach((el) => {
-    observer.observe(el);
-  });
+  observer.observe(hero.value);
 });
 </script>
-
-<style scoped>
-@keyframes slideFromBottom {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-
-  .content {
-    text-align: center;
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
-  }
-
-  .profile-image {
-    width: 450px;
-    height: 450px;
-    border-radius: 100%;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .message {
-    font-size: 2rem;
-    color: #333;
-    font-weight: bold;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-slideFromBottom {
-  animation: slideFromBottom 0.8s ease forwards;
-}
-
-.animation-delay-200 {
-  animation-delay: 0.2s;
-}
-
-.animation-delay-400 {
-  animation-delay: 0.4s;
-}
-
-.animation-delay-600 {
-  animation-delay: 0.6s;
-}
-</style>
